@@ -1,0 +1,32 @@
+<!--pages/add/add.wxml-->
+<view class="productPage">
+  <view class="productItem">
+    <text>产品名称</text>
+    <van-cell-group class="itemField">
+      <van-field value="{{ productName }}" placeholder="请输入商品名称" border="{{ false }}" bind:change="onChangeproductName" />
+    </van-cell-group>
+  </view>
+  <view class="productItem">
+    <text>价格</text>
+    <van-cell-group class="itemField">
+      <van-field  value="{{ productPrice }}" placeholder="请输入商品价格" border="{{ false }}" bind:change="onChangeproductPrice" />
+    </van-cell-group>
+  </view>
+  <view class="productItem">
+    <text>库存</text>
+    <van-cell-group>
+      <van-field value="{{ productInventory }}" placeholder="请输入商品库存" border="{{ false }}" bind:change="onChangeproductInventory" />
+    </van-cell-group>
+  </view>
+  <view class="productItem">
+    <text>商品介绍</text>
+    <van-cell-group>
+      <van-field value="{{ productContent }}" placeholder="请输入商品库存" border="{{ false }}" bind:change="onChangeproductContent" />
+    </van-cell-group>
+  </view>
+  <van-uploader file-list="{{ fileList }}" bind:after-read="uploadImg" />
+  <view>
+
+  </view>
+  <van-button class="submitButton" type="primary" block>块级元素</van-button>
+</view>

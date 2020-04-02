@@ -1,0 +1,7 @@
+<!--pages/user/user.wxml-->
+
+<view class="uploader">
+    <navigator url="../add/add" open-type="navigate" class="uploader-text">
+      <text>添加产品</text>
+    </navigator>
+  </view>
