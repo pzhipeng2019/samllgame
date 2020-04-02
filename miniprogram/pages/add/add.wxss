@@ -1,15 +1,27 @@
 /* pages/add/add.wxss */
 .productPage{
-  padding: 30rpx;
+  margin: 20rpx;
+  padding:0 20rpx;
+ position: absolute;
+ left: 0;
+ top: 0;
+ height: 89%;
+ background: #ffffff;
+ width: 89%;
+  
 }
 .productItem{
   display: flex;
   justify-content:space-between;
   align-items: center;
+  padding-bottom: 20rpx;
+}
+.productItemTitle{
+  width: 150rpx;
 }
 .itemField{
   flex: 1;
-  padding-left: 20rpx;
+
 }
 .submitButton{
   width: 100%;
