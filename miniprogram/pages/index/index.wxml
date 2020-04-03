@@ -1,4 +1,4 @@
-<van-card wx:for="{{productList}}" wx:key="{{index}}"
+<van-card wx:for="{{productList}}" wx:key="{{index}}" class="vanCard"
   num="{{item.productInventory}}"
   price="{{item.productPrice}}"
   desc="{{item.productContent}}"
