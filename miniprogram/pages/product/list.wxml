@@ -1,0 +1,13 @@
+<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 0 }}" wx:for="{{productList}}" wx:key="{{index}}" class="swipeCell">
+
+  <van-cell-group>
+    <van-cell title="单元格" value="内容"><van-card 
+  num="{{item.productInventory}}"
+  price="{{item.productPrice}}"
+  desc="{{item.productContent}}"
+  title="{{item.productName}}"
+  thumb="{{ item.fileIds[0] }}"
+/></van-cell>
+  </van-cell-group>
+  <view slot="right" class="slotRightButton" bindtap="closeDel" data-product="{{item._id}}">删除</view>
+</van-swipe-cell>

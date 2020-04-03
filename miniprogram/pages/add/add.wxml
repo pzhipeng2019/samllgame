@@ -4,10 +4,10 @@
     <van-field value="{{ productName }}" required clearable label="产品名称" placeholder="请输入商品名称" bind:change="onChangeproductName" />
     <van-field value="{{ productPrice }}" required clearable label="价格" placeholder="请输入商品价格" bind:change="onChangeproductPrice" />
     <van-field value="{{ productInventory }}" required clearable label="库存" placeholder="请输入商品库存" bind:change="onChangeproductInventory" />
-    <van-field value="{{ productName }}" required clearable label="商品介绍" placeholder="请输入商品介绍" bind:change="onChangeproductContent" />
+    <van-field value="{{ productContent }}" required clearable label="商品介绍" placeholder="请输入商品介绍" bind:change="onChangeproductContent" />
 
   </van-cell-group>
 
-  <van-uploader file-list="{{ fileList }}" bind:after-read="uploadImg" />
-  <van-button class="submitButton" type="primary" block>块级元素</van-button>
+  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead"  max-count="6" bind:delete="afterDel" deletable />
+  <van-button class="submitButton" type="primary" block bindtap="submit">提交</van-button>
 </view>

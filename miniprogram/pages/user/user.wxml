@@ -5,3 +5,8 @@
       <text>添加产品</text>
     </navigator>
   </view>
+<view class="uploader">
+    <navigator url="../product/list" open-type="navigate" class="uploader-text">
+      <text>管理产品列表</text>
+    </navigator>
+  </view>

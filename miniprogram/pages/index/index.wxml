@@ -1,2 +1,8 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<van-card wx:for="{{productList}}" wx:key="{{index}}"
+  num="{{item.productInventory}}"
+  price="{{item.productPrice}}"
+  desc="{{item.productContent}}"
+  title="{{item.productName}}"
+  thumb="{{ item.fileIds[0] }}"
+/>
+

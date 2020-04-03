@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/user/user",
     "pages/set/set",
-    "pages/add/add"
+    "pages/add/add",
+    "pages/product/list"
     
   ],
   "window": {
@@ -17,12 +18,12 @@
   "style": "v2",
   "tabBar": {
     "color":"#666666",
-   "selectedColor": "#E54847",
+   "selectedColor": "#1890FF",
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页",
-      "iconPath": "images/film.png",
-      "selectedIconPath": "images/film.png"
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home-active.png"
     },
     {
       "pagePath": "pages/user/user",

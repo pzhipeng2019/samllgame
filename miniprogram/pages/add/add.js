@@ -1,4 +1,5 @@
 // pages/add/add.js
+const db=wx.cloud.database();
 Page({
 
   /**
@@ -11,15 +12,9 @@ Page({
     productContent:"",//商品介绍
     /*上传预览 */
     fileList: [
-      { url: 'https://img.yzcdn.cn/vant/leaf.jpg', name: '图片1' },
-      // Uploader 根据文件后缀来判断是否为图片文件
-      // 如果图片 URL 中不包含类型信息，可以添加 isImage 标记来声明
-      {
-        url: 'http://iph.href.lu/60x60?text=default',
-        name: '图片2',
-        isImage: true
-      }
+     
     ],
+    fileIds:[],
   },
 /*商品名称 */
   onChangeproductName(event) {
@@ -50,52 +45,74 @@ Page({
     })
   },
   /*上传预览 */
+  afterRead(event) {
+    const { file } = event.detail;
+    const tempFilePaths = file.path;
+    console.log(tempFilePaths)
+    let obj = {};
+    obj.url = tempFilePaths;
+    obj.name = new Date().getTime()
+    this.setData({
+      fileList: this.data.fileList.concat(obj),
+    })
+    console.log(this.data.fileList)
+  },
   // 上传图片
-  uploadToCloud() {
-    wx.cloud.init();
-    const { fileList } = this.data;
-    if (!fileList.length) {
-      wx.showToast({ title: '请选择图片', icon: 'none' });
-    } else {
-      const uploadTasks = fileList.map((file, index) => this.uploadFilePromise(`my-photo${index}.png`, file));
-      Promise.all(uploadTasks)
-        .then(data => {
-          wx.showToast({ title: '上传成功', icon: 'none' });
-          const newFileList = data.map(item => { url: item.fileID });
-          this.setData({ cloudPath: data, fileList: newFileList });
+  submit:function(){
+    wx.showLoading({
+      title: '提交中',
+    })
+    //上传图片
+    let promiseArr=[];
+    for (let i = 0; i < this.data.fileList.length;i++){
+      promiseArr.push(new Promise((reslove,reject)=>{
+        let item = this.data.fileList[i];
+        let suffix=/\.\w+$/.exec(item.url)[0];
+        wx.cloud.uploadFile({
+          cloudPath:item.name+suffix,
+          filePath:item.url,
+          success:res=>{
+            this.setData({
+              fileIds:this.data.fileIds.concat(res.fileID)
+            })
+            reslove();
+          },
+          fail:console.error
         })
-        .catch(e => {
-          wx.showToast({ title: '上传失败', icon: 'none' });
-          console.log(e);
-        });
+      }))
     }
-  },
-
-uploadFilePromise(fileName, chooseResult) {
-    return wx.cloud.uploadFile({
-      cloudPath: fileName,
-      filePath: chooseResult.path
-    });
-  },
-  uploadImg: function (event) {
-    console.log(event)
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
-      success: res => {
-       
-        // tempFilePath可以作为img标签的src属性显示图片
-        const tempFilePaths = res.tempFilePaths[0];
-        console.log(res)
-        let obj={};
-        obj.url = tempFilePaths;
-        obj.name = new Date().getTime()
-        this.setData({
-          fileList: this.data.fileList.concat(obj),
+    Promise.all(promiseArr).then(res=>{
+      db.collection('product').add({
+        data:{
+          productName: this.data.productName,
+          productPrice: this.data.productPrice,
+          productInventory: this.data.productInventory,
+          productContent: this.data.productContent,
+          fileIds:this.data.fileIds,
+          _id:0,
+        }
+      }).then(res=>{
+        wx.hideLoading();
+        wx.showToast({
+          title: '添加成功',
         })
-        console.log(this.data.fileList)
-      }
+        console.log(res)
+      }).catch(err=>{
+        wx.hideLoading();
+        wx.showToast({
+          title: '添加失败',
+        })
+      })
+    })
+  },
+  afterDel(event){
+    console.log(event.detail.index)
+    const { fileList}=this.data;
+    console.log(fileList)
+    fileList.splice(event.detail.index,1)
+    console.log(fileList)
+    this.setData({
+      fileList: fileList,
     })
   },
   /**

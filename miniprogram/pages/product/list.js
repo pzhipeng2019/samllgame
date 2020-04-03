@@ -1,24 +1,45 @@
-// pages/index/index.js
-const db=wx.cloud.database();
+// pages/product/list.js
+const db = wx.cloud.database();
 Page({
-
   /**
    * 页面的初始数据
    */
+
   data: {
-    productList:[],//数据列表
+    productList: [],//数据列表
   },
   /**
    * 获取product 数据
    */
-  getProduct:function(){
+  getProduct: function () {
     db.collection("product").get({
-      success:res=>{
+      success: res => {
         console.log(res.data)
         this.setData({
-          productList:res.data,
+          productList: res.data,
         })
       }
+    })
+  },
+  closeDel:function(event){
+    const id = event.currentTarget.dataset.product
+    console.log(event.currentTarget.dataset.product)
+  
+    db.collection("product").doc(id).remove().then(res=>{
+      wx.showToast({
+        title: '成功删除此商品！',
+      })
+      const { productList } = this.data;
+      const obj = productList.find(item => item._id === id);
+      productList.splice(productList.indexOf(obj), 1)
+      console.log(productList)
+      this.setData({
+        productList,
+      })
+    }).catch(err=>{
+      wx.showToast({
+        title: '删除失败！',
+      })
     })
   },
 
