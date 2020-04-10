@@ -74,9 +74,9 @@ page {
 
 .uploader-text, .tunnel-text {
   width: 100%;
-  line-height: 52px;
+ 
   font-size: 34rpx;
-  color: #007aff;
+  color: #333333;
 }
 
 .uploader-container {

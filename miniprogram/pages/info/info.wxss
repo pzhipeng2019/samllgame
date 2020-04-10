@@ -1,0 +1,64 @@
+/* pages/info/info.wxss */
+image{
+  width: 100%;
+}
+.priceBox{
+  background: #f00;
+  color: #ffffff;
+  padding: 10rpx 20rpx;
+}
+.plany{
+  padding: 10rpx
+}
+.title{
+  font-size:28rpx;
+  font-weight: bold;
+  line-height: 62rpx;
+}
+.content{
+  font-size: 24rpx;
+  line-height: 32rpx;
+}
+page{
+background: #ffffff 
+}
+.buttonBox{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background-color: #fafafa;
+  padding:20rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 95%;
+  border-top: 1px solid #ebebeb;
+}
+.vanButton{
+ text-align: center;
+ display: flex;
+ justify-content: space-between;
+  align-content: center;
+}
+.buttonSmall{
+  width: 80rpx;
+}
+.buttonText{
+  font-size: 24rpx;
+}
+.buttonCar{
+  background: #be99ff;
+  border-top-left-radius: 60rpx;
+  border-bottom-left-radius: 60rpx;
+}
+.buttonBuy{
+  background: #7232dd;
+  border-top-right-radius: 60rpx;
+  border-bottom-right-radius: 60rpx;
+}
+.footButton{
+   color: #ffffff;
+   font-size: 32rpx;
+   line-height: 60rpx;
+   padding: 10rpx 50rpx;
+}

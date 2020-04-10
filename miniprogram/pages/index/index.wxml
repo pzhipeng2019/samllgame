@@ -1,8 +1,395 @@
-<van-card wx:for="{{productList}}" wx:key="{{index}}" class="vanCard"
-  num="{{item.productInventory}}"
-  price="{{item.productPrice}}"
-  desc="{{item.productContent}}"
-  title="{{item.productName}}"
-  thumb="{{ item.fileIds[0] }}"
-/>
+<view>
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+</view>
+<view class="swperBox">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}">
+    <block wx:for="{{banner}}" wx:key="*this">
+      <swiper-item>
+        <view class="swiper-item {{item}}">
+          <image src="../../images/{{item}}.png" mode='widthFix' />
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view>
+  <swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}">
+    <block>
+      <swiper-item class="swiperItemView">
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+      </swiper-item>
+      <swiper-item class="swiperItemView">
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口1</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口1</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口1</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口1</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口1</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口1</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口1</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口1</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/home.png" />
+          </view>
+          <view>進口</view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="floor">
+  <view class="unit">
+    <image mode='widthFix' src="../../images/unit.png" />
+  </view>
+</view>
+
+<!-- 秒殺 -->
+<view class="floor-content">
+  <view class="floor seckill">
+    <view style="display:flex; padding:20rpx 0;">
+      <text class="seckillTitle">京东秒杀</text>
+      <van-count-down use-slot time="{{ time }}" bind:change="onChange">
+        <text class="item">{{ timeData.hours }}</text>:
+        <text class="item">{{ timeData.minutes }}</text>:
+        <text class="item">{{ timeData.seconds }}</text>
+      </van-count-down>
+    </view>
+    <view>
+      <view class="secondsKill">
+        <scroll-view class="scroll-view_H" scroll-x="true" enable-flex="true" bindscroll="scroll" style="width: 100%">
+          <view class="flex-wrp" style="flex-direction:column;">
+            <view class="SecondsKillImg">
+              <image src="../../images/iphone.png" />
+            </view>
+            <view class="secondesKillPice">￥3000</view>
+            <view class="secondesKillPice">￥3000</view>
+          </view>
+          <view class="flex-wrp" style="flex-direction:column;">
+            <view class="SecondsKillImg">
+              <image src="../../images/iphone.png" />
+            </view>
+            <view class="secondesKillPice">￥3000</view>
+            <view class="secondesKillPice">￥3000</view>
+          </view>
+          <view class="flex-wrp" style="flex-direction:column;">
+            <view class="SecondsKillImg">
+              <image src="../../images/iphone.png" />
+            </view>
+            <view class="secondesKillPice">￥3000</view>
+            <view class="secondesKillPice">￥3000</view>
+          </view>
+          <view class="flex-wrp" style="flex-direction:column;">
+            <view class="SecondsKillImg">
+              <image src="../../images/iphone.png" />
+            </view>
+            <view class="secondesKillPice">￥3000</view>
+            <view class="secondesKillPice">￥3000</view>
+          </view>
+          <view class="flex-wrp" style="flex-direction:column;">
+            <view class="SecondsKillImg">
+              <image src="../../images/iphone.png" />
+            </view>
+            <view class="secondesKillPice">￥3000</view>
+            <view class="secondesKillPice">￥3000</view>
+          </view>
+          <view class="flex-wrp" style="flex-direction:column;">
+            <view class="SecondsKillImg">
+              <image src="../../images/iphone.png" />
+            </view>
+            <view class="secondesKillPice">￥3000</view>
+            <view class="secondesKillPice">￥3000</view>
+          </view>
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+</view>
+<view class="floor-content">
+  <view class="graphic">
+    <view class="graphic-col-5">
+      <image mode='widthFix' src="../../images/9c53e25651659d43.png!q70.jpg" />
+    </view>
+    <view class="graphic-col-5">
+      <image mode='widthFix' src="../../images/aba2bcb4855e6e52.png!q70.jpg" />
+    </view>
+  </view>
+</view>
+<view>
+  <view>
+    <image mode='widthFix' style="width:100%; height:68rpx" src="../../images/5ec2bb870605dcb3.png!q70.jpg" />
+  </view>
+
+  <view class="floor-content">
+    <view class="outer">
+      <view class="flex-wrap border-bottom" style="flex-direction:row;">
+        <view class="flex-item" style="border-right:1px solid #f5f5f5">
+          <view>艺术厨房</view>
+          <view style="font-size:20rpx">让你的厨房质地满满</view>
+
+          <view class="flex-wrap" style="flex-direction:row; padding-top:10rpx; outer-item">
+            <view class="col-5 ">
+              <view class="outer-item-big">
+                <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+              </view>
+            </view>
+            <view class="col-5">
+               <view class="outer-item-big">
+                <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="flex-item">
+
+          <view>艺术厨房</view>
+          <view style="font-size:20rpx">让你的厨房质地满满</view>
+          <view class="flex-wrap" style="flex-direction:row; padding-top:10rpx;">
+            <view class="col-5">
+               <view class="outer-item-big">
+                <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+              </view>
+            </view>
+            <view class="col-5">
+               <view class="outer-item-big">
+                <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="flex-wrap" style="flex-direction:row;">
+        <view class="col-25 outer-item">
+          <view>租房贵族</view>
+          <view style="font-size:20rpx">拎包入住</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+        <view class="col-25 outer-item">
+          <view>尖货好礼</view>
+          <view style="font-size:20rpx">送人必备</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+        <view class="col-25 outer-item">
+          <view>优雅干练</view>
+          <view style="font-size:20rpx">职场好形象</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+        <view class="col-25 outer-item">
+          <view>奇妙物语</view>
+          <view style="font-size:20rpx">解压小玩具</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  <view>
+    <image mode='widthFix' style="width:100%; height:68rpx" src="../../images/deef719dfdfe2844.png" />
+  </view>
+
+  <view class="floor-content">
+    <view class="outer">
+      <view class="flex-wrap border-bottom" style="flex-direction:row;">
+        <view class="col-25 outer-item">
+          <view>租房贵族</view>
+          <view style="font-size:20rpx">拎包入住</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+        <view class="col-25 outer-item">
+          <view>尖货好礼</view>
+          <view style="font-size:20rpx">送人必备</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+        <view class="col-25 outer-item">
+          <view>优雅干练</view>
+          <view style="font-size:20rpx">职场好形象</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+        <view class="col-25 outer-item">
+          <view>奇妙物语</view>
+          <view style="font-size:20rpx">解压小玩具</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+      </view>
+      <view class="flex-wrap" style="flex-direction:row;">
+        <view class="col-25 outer-item">
+          <view>租房贵族</view>
+          <view style="font-size:20rpx">拎包入住</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+        <view class="col-25 outer-item">
+          <view>尖货好礼</view>
+          <view style="font-size:20rpx">送人必备</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+        <view class="col-25 outer-item">
+          <view>优雅干练</view>
+          <view style="font-size:20rpx">职场好形象</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+        <view class="col-25 outer-item">
+          <view>奇妙物语</view>
+          <view style="font-size:20rpx">解压小玩具</view>
+          <view>
+            <image style="width:100%;" mode='widthFix' src="../../images/f79ec859d91bd0f2.jpg" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="floor-content">
+<view style="width:100%; height:68rpx;" class="border-bottom">
+    <image mode='widthFix' src="../../images/88174b36f85283b6.png" />
+  </view>
+  <view class="page-section-spacing">
+    <view class="flex-wrp page-wrap" style="flex-direction:row;">
+
+      <view class="flex-item" wx:for="{{productList}}" wx:key="index">
+        <view class="flex-item-content">
+ <navigator url="../info/info?_id={{item._id}}" open-type="navigate" class="uploader-text">
+          <view class="flex-item-img">
+            <image src="{{item.fileIds[0]}}" mode='widthFix' />
+          </view>
+
+          <view class="flex-item-text">{{item.productName}} </view>
+          <view>
+            <text class="flex-item-price">￥{{item.productPrice}} </text>
+          </view>
+</navigator>
+        </view>
+      </view>
+    
+    </view>
+  </view>
+
+</view>
 

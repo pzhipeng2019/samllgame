@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "van-card": "/@vant/weapp/card"
+    "van-card": "/@vant/weapp/card",
+    "van-search": "/@vant/weapp/search",
+    "van-count-down": "/@vant/weapp/count-down"
   },
   "backgroundColor": "#ffffff"
 }

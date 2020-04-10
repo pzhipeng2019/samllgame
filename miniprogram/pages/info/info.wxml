@@ -1,0 +1,30 @@
+<view>
+  <image mode='widthFix' src="{{info.fileIds[0]}}"></image>
+  <view class="priceBox">
+    <text>￥{{info.productPrice}}</text>
+  </view>
+  <view class="plany">
+    <view class="title">{{info.productName}}</view>
+    <view class="content">{{info.productContent}}</view>
+  </view>
+ <view class="buttonBox">
+  <view class="vanButton">
+    <view class="buttonSmall">
+      <view class="buttonIcon">
+        <van-icon name="chat-o" />
+      </view>
+      <view class="buttonText">客服</view>
+    </view>
+  <view class="buttonSmall">
+      <view class="buttonIcon">
+        <van-icon name="shopping-cart-o" />
+      </view>
+      <view class="buttonText">购物车</view>
+    </view>
+  </view>
+  <view class="vanButton">
+    <view class="buttonCar footButton">加入购物车</view>
+    <view class="buttonBuy footButton">立即购买</view>
+  </view>
+ </view>
+</view>

@@ -4,7 +4,8 @@
     "pages/user/user",
     "pages/set/set",
     "pages/add/add",
-    "pages/product/list"
+    "pages/product/list",
+    "pages/info/info"
     
   ],
   "window": {

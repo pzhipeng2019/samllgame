@@ -81,6 +81,14 @@
 					"id": -1,
 					"name": "pages/product/list",
 					"pathName": "pages/product/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/info/info",
+					"pathName": "pages/info/info",
+					"query": "_id=79a2c43f5e86dc700045035f615e861c",
 					"scene": null
 				}
 			]
