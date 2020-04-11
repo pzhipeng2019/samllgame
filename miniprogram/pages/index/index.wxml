@@ -15,130 +15,16 @@
 <view>
   <swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}">
     <block>
-      <swiper-item class="swiperItemView">
-        <view class="swiperView">
+      <swiper-item class="swiperItemView" wx:for="{{mallNav}}" wx:key="index">
+        <view class="swiperView" wx:for="{{item.item}}" wx:key="index" >
           <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
+            <image mode='widthFix' src="{{item.path}}" />
           </view>
-          <view>進口</view>
+          <view class="swiperIconText">{{item.title}}</view>
         </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
+     
       </swiper-item>
-      <swiper-item class="swiperItemView">
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口1</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口1</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口1</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口1</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口1</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口1</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口1</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口1</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
-        <view class="swiperView">
-          <view class="swiperIcon">
-            <image mode='widthFix' src="../../images/home.png" />
-          </view>
-          <view>進口</view>
-        </view>
-      </swiper-item>
+     
     </block>
   </swiper>
 </view>

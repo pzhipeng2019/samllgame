@@ -19,11 +19,11 @@
       <view class="buttonIcon">
         <van-icon name="shopping-cart-o" />
       </view>
-      <view class="buttonText">购物车</view>
+      <view class="buttonText"><navigator url="/pages/car/car" open-type="switchTab" hover-class="other-navigator-hover">购物车</navigator></view>
     </view>
   </view>
   <view class="vanButton">
-    <view class="buttonCar footButton">加入购物车</view>
+    <view class="buttonCar footButton" bindtap="addCar">加入购物车</view>
     <view class="buttonBuy footButton">立即购买</view>
   </view>
  </view>

@@ -1,1 +1,32 @@
 /* pages/car/car.wxss */
+image{
+  width: 100%;
+}
+.list{
+  padding: 20rpx;
+}
+.car-item{
+  display: flex;
+  background: #ffffff;
+  padding: 30rpx 20rpx;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.car-item-image{
+  width: 190rpx;
+  
+}
+.car-item-content{
+  padding: 0 15rpx
+}
+.car-item-title{
+  font-size:28rpx;
+}
+.car-item-price{
+  color: #f2270c;
+}
+.car-item-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

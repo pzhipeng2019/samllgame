@@ -1,2 +1,17 @@
 <!--pages/car/car.wxml-->
-
+<view class="carBox">
+  <view class="list">
+    <view class="car-item" wx:for="{{carList}}" wx:key="index">
+      <view class="car-item-image">
+        <image mode='widthFix' src="{{item.fileIds}}" />
+      </view>
+      <view class="car-item-content">
+        <view class="car-item-title">{{item.productName}}</view>
+        <view class="car-item-footer">
+          <view class="car-item-price">{{item.productPrice}}</view>
+          <van-stepper value="{{item.carItemNum}}" bind:change="onChange" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

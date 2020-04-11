@@ -8,7 +8,73 @@ Page({
   data: {
     info:{}
   },
-
+  addCar: function(){//添加购物车
+  wx.showLoading({
+    title: '加载中',
+  })
+  console.log(this.data.info)
+  const info=this.data.info;
+  db.collection("carList").where({
+    _id:info._id
+  }).get().then(res=>{
+    console.log(res.data[0].carItemNum)
+    wx.hideLoading();
+    if(res.data.length>0){//是否存在这条记录
+      db.collection('carList').doc(
+        info._id
+      ).update({
+        // data 传入需要局部更新的数据
+        data: {
+          // 表示将 done 字段置为 true
+          carItemNum: res.data[0].carItemNum+1
+        }
+      })
+        .then(res=>{
+          wx.hideLoading();
+          wx.showToast({
+            title: '添加成功！',
+          })
+        })
+        .catch(err => {
+          wx.hideLoading();
+          wx.showToast({
+            title: '添加失败111',
+          })
+        })
+    }else{
+      this.addCarObj();
+    }
+    }).catch(err => {
+      console.log(err)
+      wx.hideLoading();
+      wx.showToast({
+        title: '添加失败啊啊啊',
+      })
+    })
+  },
+  addCarObj:function(){
+    const info = this.data.info;
+    db.collection('carList').add({
+      data: {
+        productName: info.productName,
+        productPrice: info.productPrice,
+        fileIds: info.fileIds[0],
+        _id: info._id,
+        carItemNum: 1,
+      }
+    }).then(res => {
+      wx.hideLoading();
+      wx.showToast({
+        title: '添加成功',
+      })
+      console.log(res)
+    }).catch(err => {
+      wx.hideLoading();
+      wx.showToast({
+        title: '添加失败',
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

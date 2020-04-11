@@ -1,18 +1,32 @@
 // pages/car/car.js
+const db=wx.cloud.database();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    carList:[],
   },
-
+  onChange(event) {
+    console.log(event.detail);
+  },
+  getCarList:function(){
+    db.collection("carList").get({
+      success:res=>{
+        console.log(res.data)
+        this.setData({
+          carList:res.data,
+        })
+      }
+    })
+  
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getCarList();
   },
 
   /**
@@ -26,7 +40,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getCarList();
   },
 
   /**
