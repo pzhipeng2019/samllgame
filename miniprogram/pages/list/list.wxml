@@ -1,0 +1,137 @@
+<view class="rootBox">
+  <view class="rootList">
+    <view class="page-section-spacing">
+      <scroll-view scroll-y="true" style="height: {{windowHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="scroll-view-item item {{cur==index?'cur':''}}" data-index="{{index}}" wx:for="{{rootList}}" wx:key="index" bindtap="rootListItem">{{item}}</view>
+       
+      </scroll-view>
+    </view>
+  </view>
+  <view class="rootContent">
+    <scroll-view scroll-y="true" style="height:{{windowHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <view class="scroll-view-item">
+        <view class="content-item-title">热销产品</view>
+        <view class="flow-warp">
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+        </view>
+      </view>
+ <view class="scroll-view-item">
+        <view class="content-item-title">热销产品</view>
+        <view class="flow-warp">
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+        </view>
+      </view>
+       <view class="scroll-view-item">
+        <view class="content-item-title">热销产品</view>
+        <view class="flow-warp">
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+          <view class="content-item">
+            <view class="content-item-image">
+              <image mode='widthFix' src="../../images/iphone.jpg" />
+            </view>
+            <view class="content-text">手机</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
