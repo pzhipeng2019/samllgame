@@ -17,7 +17,7 @@ Page({
   db.collection("carList").where({
     _id:info._id
   }).get().then(res=>{
-    console.log(res.data[0].carItemNum)
+   
     wx.hideLoading();
     if(res.data.length>0){//是否存在这条记录
       db.collection('carList').doc(
@@ -38,7 +38,7 @@ Page({
         .catch(err => {
           wx.hideLoading();
           wx.showToast({
-            title: '添加失败111',
+            title: '添加失败!',
           })
         })
     }else{
@@ -48,7 +48,7 @@ Page({
       console.log(err)
       wx.hideLoading();
       wx.showToast({
-        title: '添加失败啊啊啊',
+        title: '添加失败!',
       })
     })
   },

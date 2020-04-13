@@ -13,14 +13,18 @@ image{
   margin-bottom: 20rpx;
 }
 .car-item-image{
-  width: 190rpx;
+  width: 420rpx;
   
 }
 .car-item-content{
   padding: 0 15rpx
 }
 .car-item-title{
-  font-size:28rpx;
+  font-size:24rpx;
+   height: 100rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;
+  overflow: hidden;
 }
 .car-item-price{
   color: #f2270c;
@@ -29,4 +33,18 @@ image{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.slotRightButton{
+  background: #FF4D4F;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 20rpx;
+}
+.car-item-checkbox{
+  margin-right: 10rpx;
+
 }

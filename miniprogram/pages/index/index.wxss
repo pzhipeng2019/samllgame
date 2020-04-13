@@ -1,5 +1,6 @@
 image{
   width: 100%;
+  height:auto;
 }.vanCard{
   background: #ffffff;
   margin-bottom: 20rpx;
@@ -131,13 +132,21 @@ flex-wrap: wrap;
 .flex-item:nth-child(even){
   padding-left: 10rpx;
 }
+.flex-item-img{
+  width: 310rpx;
+  height: 310rpx;
+  overflow: hidden;
+}
 .flex-item-img image{
   width: 100%;
-  height: 310rpx;
 }
 .flex-item-text{
   font-size: 24rpx;
   padding: 0 10rpx;
+  height: 70rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .flex-item-price{
   color: #f23030;

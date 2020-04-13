@@ -1,7 +1,12 @@
 <!--pages/car/car.wxml-->
 <view class="carBox">
   <view class="list">
-    <view class="car-item" wx:for="{{carList}}" wx:key="index">
+   
+    <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 0 }}" wx:for="{{carList}}" wx:key="{{index}}" class="swipeCell">
+
+  <van-cell-group>
+ <view class="car-item">
+   <view class="car-item-checkbox"> <van-checkbox value="{{ item.checked}}"  data-priceId="{{item._id}}" checked-color="#07c160" bind:change="onChangeChecked"/></view>
       <view class="car-item-image">
         <image mode='widthFix' src="{{item.fileIds}}" />
       </view>
@@ -9,9 +14,14 @@
         <view class="car-item-title">{{item.productName}}</view>
         <view class="car-item-footer">
           <view class="car-item-price">{{item.productPrice}}</view>
-          <van-stepper value="{{item.carItemNum}}" bind:change="onChange" />
+          <van-stepper value="{{item.carItemNum}}" data-priceId="{{item._id}}" bind:change="onChange" />
         </view>
+       
       </view>
     </view>
+  </van-cell-group>
+  <view slot="right" class="slotRightButton" bindtap="closeDel" data-product="{{item._id}}">删除</view>
+</van-swipe-cell>
   </view>
 </view>
+

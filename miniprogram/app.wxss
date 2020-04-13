@@ -5,7 +5,9 @@
   align-items: center;
   box-sizing: border-box;
 } 
-
+image{
+  height: auto;
+}
 button {
   background: initial;
 }
