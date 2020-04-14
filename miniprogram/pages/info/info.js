@@ -36,6 +36,7 @@ Page({
           })
         })
         .catch(err => {
+          console.log(err)
           wx.hideLoading();
           wx.showToast({
             title: '添加失败!',
@@ -69,6 +70,7 @@ Page({
       })
       console.log(res)
     }).catch(err => {
+      console.log(err)
       wx.hideLoading();
       wx.showToast({
         title: '添加失败',

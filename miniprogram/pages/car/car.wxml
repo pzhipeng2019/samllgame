@@ -1,27 +1,43 @@
 <!--pages/car/car.wxml-->
 <view class="carBox">
   <view class="list">
-   
+
     <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 0 }}" wx:for="{{carList}}" wx:key="{{index}}" class="swipeCell">
 
-  <van-cell-group>
- <view class="car-item">
-   <view class="car-item-checkbox"> <van-checkbox value="{{ item.checked}}"  data-priceId="{{item._id}}" checked-color="#07c160" bind:change="onChangeChecked"/></view>
-      <view class="car-item-image">
-        <image mode='widthFix' src="{{item.fileIds}}" />
-      </view>
-      <view class="car-item-content">
-        <view class="car-item-title">{{item.productName}}</view>
-        <view class="car-item-footer">
-          <view class="car-item-price">{{item.productPrice}}</view>
-          <van-stepper value="{{item.carItemNum}}" data-priceId="{{item._id}}" bind:change="onChange" />
+      <van-cell-group>
+        <view class="car-item">
+          <view class="car-item-checkbox">
+            <van-checkbox value="{{ item.checked}}" data-priceId="{{item._id}}" checked-color="#07c160" bind:change="onChangeChecked" />
+          </view>
+          <view class="car-item-image">
+            <image style="width: 200rpx; height: 200rpx; overflow:hidden;" src="{{item.fileIds}}" />
+          </view>
+          <view class="car-item-content">
+            <view class="car-item-title">{{item.productName}}</view>
+            <view class="car-item-footer">
+              <view class="car-item-price">{{item.productPrice}}</view>
+              <van-stepper value="{{item.carItemNum}}" data-priceId="{{item._id}}" bind:change="onChange" />
+            </view>
+
+          </view>
         </view>
-       
-      </view>
+      </van-cell-group>
+      <view slot="right" class="slotRightButton" bindtap="closeDel" data-product="{{item._id}}">删除</view>
+    </van-swipe-cell>
+  </view>
+</view>
+<view class="carFooter">
+<view class="carFooterContent">
+  <view style="padding-left:20rpx;">
+  <view class="checkboxAll"> <van-checkbox value="{{AllChecked}}"  checked-color="#07c160" bind:change="onChangeAllChecked" /></view>
+    <view style="font-size:26rpx;">全选</view>
+  </view>
+  <view class="carFooterBottom">
+    <view>总计：
+      <text>{{totalPrice}}</text>
     </view>
-  </van-cell-group>
-  <view slot="right" class="slotRightButton" bindtap="closeDel" data-product="{{item._id}}">删除</view>
-</van-swipe-cell>
+    <view class="carFooterButton">去结算</view>
   </view>
 </view>
 
+</view>

@@ -2,6 +2,9 @@
 image{
   width: 100%;
 }
+page{
+  padding-bottom: 60rpx;
+}
 .list{
   padding: 20rpx;
 }
@@ -12,12 +15,10 @@ image{
   align-items: center;
   margin-bottom: 20rpx;
 }
-.car-item-image{
-  width: 420rpx;
-  
-}
+
 .car-item-content{
-  padding: 0 15rpx
+  padding: 0 15rpx;
+  flex:1;
 }
 .car-item-title{
   font-size:24rpx;
@@ -40,11 +41,50 @@ image{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+height: 100%;
+
   padding: 0 20rpx;
 }
 .car-item-checkbox{
   margin-right: 10rpx;
+}
+.carFooter{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  font-size: 32rpx;
+}
+.carFooterContent{
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 0 20rpx;
+  height: 100rpx;
+align-items: center;
 
+box-shadow: 0 0 5rpx #e6e6e6;
+}
+.carFooterBottom{
+  display: flex;
+  align-items: center;
+ 
+}
+.carFooterButton{
+  background-color:#f2270c;
+  color: #ffffff;
+  border-radius: 30rpx;
+  width: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin: 0 10rpx;
+  padding: 0 25rpx;
+  
+}
+.checkboxAll{
+ display: flex;
+ justify-content: center;
+ padding-bottom: 5rpx;
 }

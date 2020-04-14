@@ -2,7 +2,7 @@
   <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
 </view>
 <view class="swperBox">
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" style="height:304rpx">
     <block wx:for="{{banner}}" wx:key="*this">
       <swiper-item>
         <view class="swiper-item {{item}}">
@@ -13,7 +13,7 @@
   </swiper>
 </view>
 <view>
-  <swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}">
+  <swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}" style="height:280rpx">
     <block>
       <swiper-item class="swiperItemView" wx:for="{{mallNav}}" wx:key="index">
         <view class="swiperView" wx:for="{{item.item}}" wx:key="index" >
@@ -24,6 +24,15 @@
         </view>
      
       </swiper-item>
+      <!-- <swiper-item class="swiperItemView">
+        <view class="swiperView">
+          <view class="swiperIcon">
+            <image mode='widthFix' src="../../images/mallnav-01.png" />
+          </view>
+          <view class="swiperIconText">超市</view>
+        </view>
+     
+      </swiper-item> -->
      
     </block>
   </swiper>

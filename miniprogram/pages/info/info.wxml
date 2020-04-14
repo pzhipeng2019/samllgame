@@ -1,5 +1,8 @@
 <view>
+<view class="infoImage">
   <image mode='widthFix' src="{{info.fileIds[0]}}"></image>
+</view>
+
   <view class="priceBox">
     <text>￥{{info.productPrice}}</text>
   </view>
@@ -11,13 +14,13 @@
   <view class="vanButton">
     <view class="buttonSmall">
       <view class="buttonIcon">
-        <van-icon name="chat-o" />
+        <van-icon name="chat-o" size="40rpx"/>
       </view>
       <view class="buttonText">客服</view>
     </view>
   <view class="buttonSmall">
       <view class="buttonIcon">
-        <van-icon name="shopping-cart-o" />
+        <van-icon name="shopping-cart-o" size="40rpx" />
       </view>
       <view class="buttonText"><navigator url="/pages/car/car" open-type="switchTab" hover-class="other-navigator-hover">购物车</navigator></view>
     </view>

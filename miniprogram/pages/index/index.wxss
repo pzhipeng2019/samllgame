@@ -133,8 +133,8 @@ flex-wrap: wrap;
   padding-left: 10rpx;
 }
 .flex-item-img{
-  width: 310rpx;
-  height: 310rpx;
+  width:100%;
+ 
   overflow: hidden;
 }
 .flex-item-img image{
@@ -143,7 +143,7 @@ flex-wrap: wrap;
 .flex-item-text{
   font-size: 24rpx;
   padding: 0 10rpx;
-  height: 70rpx;
+  height:65rpx;
   text-overflow: ellipsis;
   display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;
   overflow: hidden;

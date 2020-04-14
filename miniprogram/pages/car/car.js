@@ -7,6 +7,9 @@ Page({
    */
   data: {
     carList:[],
+    AllChecked:false,
+    totalPrice:0.00,
+    openid:"oGPBK5O_7-nNf1t1g1nGmn1eDsjE",
   },
   onChange(event) {
     wx.showLoading({
@@ -26,6 +29,17 @@ Page({
     })
       .then(res => {
         wx.hideLoading();
+       
+        const { carList } = this.data;
+        console.log(carList)
+        const obj = carList.find(item => item._id === priceid);
+        obj.carItemNum = event.detail;
+        this.uploadTotalPrice(carList)
+
+        this.setData({
+          carList,
+
+        })
         // wx.showToast({
         //   title: '添加成功！',
         // })
@@ -37,6 +51,31 @@ Page({
         // })
       })
   },
+  /**
+   * 全选
+   */
+  onChangeAllChecked:function(event){
+    
+    const { AllChecked, carList}=this.data;
+    console.log(AllChecked)
+    if(AllChecked===true){
+      for(let item in carList){
+        carList[item].checked=false
+      }
+    }else{
+      for (let item in carList) {
+        carList[item].checked = true
+      }
+    }
+    this.setData({
+      AllChecked: !AllChecked,
+      carList,
+    })
+    console.log(AllChecked)
+  },
+  /**
+   * 勾选
+   */
   onChangeChecked:function(event){
     const priceid = event.currentTarget.dataset.priceid;
     console.log(event);
@@ -50,9 +89,11 @@ Page({
     console.log(carList)
     const obj = carList.find(item => item._id === priceid);
     obj.checked = !obj.checked;
-    console.log(carList)
+    this.uploadTotalPrice(carList)
+   
     this.setData({
       carList,
+     
     })
     console.log(event.detail, !event.detail);
    
@@ -80,15 +121,36 @@ Page({
       })
   },
   getCarList:function(){
-    db.collection("carList").get({
+    const {openid}=this.data;
+    db.collection("carList").where({ _openid: openid}).get({
       success:res=>{
         console.log(res.data)
+        const carList=res.data;
+        this.uploadTotalPrice(carList)
         this.setData({
-          carList:res.data,
+          carList,
+         
         })
       }
     })
   
+  },
+  /**
+   * 修改价格
+   */
+  uploadTotalPrice: function (carList){
+    
+    
+    const newCarList = carList.filter(item => item.checked === true);
+    console.log(newCarList)
+    let totalPrice = 0;
+    for (let item in newCarList) {
+      totalPrice = totalPrice + Number(newCarList[item].productPrice) * newCarList[item].carItemNum
+    }
+    console.log(totalPrice)
+    this.setData({
+      totalPrice,
+    })
   },
   /**
    * 删除
@@ -118,7 +180,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getCarList();
+    
+    const accountInfo = wx.getAccountInfoSync();
+    console.log(accountInfo.miniProgram.appId) // 小程序 appId
+    wx.cloud.callFunction({
+      name: 'productInfo',
+      complete: res => {
+        console.log('callFunction test result: ', res.result.openid)
+        this.setData({
+          openid: res.result.openid,
+        })
+      }
+    })
+    
   },
 
   /**

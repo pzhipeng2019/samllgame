@@ -2,6 +2,13 @@
 image{
   width: 100%;
 }
+page{
+  padding-bottom: 110rpx;
+}
+.infoImage{
+  width:100%;
+  height: auto;
+}
 .priceBox{
   background: #f00;
   color: #ffffff;
@@ -27,11 +34,12 @@ background: #ffffff
   justify-content: space-between;
   align-content: center;
   background-color: #fafafa;
-  padding:20rpx;
+  height: 80rpx;
+  padding:10rpx 0;
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 95%;
+  width: 100%;
   border-top: 1px solid #ebebeb;
 }
 .vanButton{
@@ -39,6 +47,7 @@ background: #ffffff
  display: flex;
  justify-content: space-between;
   align-content: center;
+  padding: 0 10rpx;
 }
 .buttonSmall{
   width: 80rpx;
