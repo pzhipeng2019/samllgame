@@ -1,12 +1,147 @@
 <!--pages/user/user.wxml-->
+<view class="myHeader">
+	<view class="userHeader">
+		<navigator navigator url="../set/set" open-type="navigate">
+			<van-icon name="setting-o" color="#ffffff" size="35rpx" />
+		</navigator>
+ 
+		<van-icon name="chat-o" badge="9"  color="#ffffff" size="35rpx" />
+	</view>
+	<view class="userInfo">
+		<view class="userImage">
+			<image mode='widthFix' src="{{userInfo.avatarUrl}}" />
+		</view>
+		<view>
+			<view class="userName">{{userInfo.nickName}}</view>
+			<view>
+				<van-tag round type="primary">标签</van-tag>
+				<van-tag round type="success">标签</van-tag>
+				<van-tag round type="danger">标签</van-tag>
+				<van-tag round type="warning">标签</van-tag>
+			</view>
+		</view>
+	</view>
 
-<view class="uploader">
-    <navigator url="../add/add" open-type="navigate" class="uploader-text">
-      <text>添加产品</text>
-    </navigator>
-  </view>
-<view class="uploader">
-    <navigator url="../product/list" open-type="navigate" class="uploader-text">
-      <text>管理产品列表</text>
-    </navigator>
-  </view>
+</view>
+<view class="myOrderCark">
+	<view class="myOrderCarkItem">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/5a53578eN0e2811b6.png" />
+		</view>
+		<view class="myOrderText">待支付</view>
+	</view>
+	<view class="myOrderCarkItem">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/5a535791N627c296c.png" />
+		</view>
+		<view class="myOrderText">待收货</view>
+	</view>
+	<view class="myOrderCarkItem">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/5a5357eaNab882dcb.png" />
+		</view>
+		<view class="myOrderText">退换/售后</view>
+	</view>
+	<view class="myOrderCarkItem">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/5a6d7b8bN8431ea1a.png" />
+		</view>
+		<view class="myOrderText">全部订单</view>
+	</view>
+</view>
+<view class="myOrderCark">
+	<view class="myOrderCarkItem">
+		<view class="myOrderItemText">
+      6张
+		</view>
+		<view class="myOrderText">优惠券</view>
+	</view>
+	<view class="myOrderCarkItem">
+			<view class="myOrderItemText">
+    1w+
+		</view>
+		<view class="myOrderText">白条额度</view>
+	</view>
+	<view class="myOrderCarkItem">
+			<view class="myOrderItemText">
+    425个
+		</view>
+		<view class="myOrderText">金豆</view>
+	</view>
+	<view class="myOrderCarkItem">
+		<view class="myOrderItemText">
+			1元
+		</view>
+		<view class="myOrderText">红包</view>
+	</view>
+  <view class="myOrderCarkItem">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/5b235f37Ne85fdb85.png" />
+		</view>
+		<view class="myOrderText">我的资产</view>
+	</view>
+</view>
+<view class="myOrderCark">
+	<view class="myOrderCarkItem">
+		<view class="myOrderImage">
+		60
+		</view>
+		<view class="myOrderText">商品收藏</view>
+	</view>
+	<view class="myOrderCarkItem">
+		<view class="myOrderImage">
+		25
+		</view>
+		<view class="myOrderText">店铺收藏</view>
+	</view>
+	<view class="myOrderCarkItem">
+		<view class="myOrderImage">
+		10
+		</view>
+		<view class="myOrderText">我的足迹</view>
+	</view>
+</view>
+<view class="myOrderCark" style="flex-wrap:wrap;padding:20rpx 10rpx">
+	<view class=" col-25">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/c8fe8e84d89685f7.png" />
+		</view>
+		<view class="myOrderText">我的预约</view>
+	</view>
+	<view class=" col-25">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/eeed6fdf78de3847.png" />
+		</view>
+		<view class="myOrderText">高价回收</view>
+	</view>
+	<view class=" col-25">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/5a1e9ee2Nb5baf153.png" />
+		</view>
+		<view class="myOrderText">火车票</view>
+	</view>
+ 	<view class=" col-25">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/5a1e9f1cNab886864.png" />
+		</view>
+		<view class="myOrderText">应用推荐</view>
+	</view>
+		<view class=" col-25">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/5a813897N7c80dea2.png" />
+		</view>
+		<view class="myOrderText">飞机票</view>
+	</view>
+	<view class=" col-25">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/5a8138f2Nfd5de7b7.png" />
+		</view>
+		<view class="myOrderText">酒店</view>
+	</view>
+	<view class=" col-25">
+		<view class="myOrderImage">
+			<image mode="widthFix" src="../../images/icon/d6d34952c182fb1b.png" />
+		</view>
+		<view class="myOrderText">闲置管家</view>
+	</view>
+</view>

@@ -7,7 +7,10 @@
     "pages/product/list",
     "pages/info/info",
     "pages/list/list",
-    "pages/car/car"
+    "pages/car/car",
+    "pages/type/type",
+    "pages/order/order",
+    "pages/banner/banner"
    
   ],
   "window": {

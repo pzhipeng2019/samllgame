@@ -1,4 +1,25 @@
-<!--pages/set/set.wxml-->
-<view>
-<text>商品名称：</text>
+
+<view class="orderItem">
+  <navigator url="../add/add" open-type="navigate" class="uploader-text">
+    <text>添加产品</text>
+  </navigator>
+  <van-icon name="arrow" />
+</view>
+<view class="orderItem">
+  <navigator url="../type/type" open-type="navigate" class="uploader-text">
+    <text>设置分类</text>
+  </navigator>
+  <van-icon name="arrow" />
+</view>
+<view class="orderItem">
+  <navigator url="../product/list" open-type="navigate" class="uploader-text">
+    <text>管理产品列表</text>
+  </navigator>
+  <van-icon name="arrow" />
+</view>
+<view class="orderItem">
+  <navigator url="../banner/banner" open-type="navigate" class="uploader-text">
+    <text>首页banner</text>
+  </navigator>
+  <van-icon name="arrow" />
 </view>

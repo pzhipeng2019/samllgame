@@ -2,7 +2,7 @@
 <view class="carBox">
   <view class="list">
 
-    <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 0 }}" wx:for="{{carList}}" wx:key="{{index}}" class="swipeCell">
+    <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 0 }}" wx:for="{{carList}}" wx:key="index" class="swipeCell">
 
       <van-cell-group>
         <view class="car-item">
@@ -36,7 +36,7 @@
     <view>总计：
       <text>{{totalPrice}}</text>
     </view>
-    <view class="carFooterButton">去结算</view>
+    <view class="carFooterButton" bindtap="goOrder">去结算</view>
   </view>
 </view>
 

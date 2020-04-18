@@ -8,6 +8,15 @@ Page({
   data: {
     info:{}
   },
+  /**
+   * 立即购买
+   */
+  buyBtn:function(){
+    
+  },
+  /**
+   * 添加购物车
+   */
   addCar: function(){//添加购物车
   wx.showLoading({
     title: '加载中',
@@ -84,7 +93,7 @@ Page({
     console.log(options)
     
     db.collection('product').where({
-      _id: options._id // 填入当前用户 openid
+      _id: options._id // 填入当前用户 _id
     }).get().then(res => {
       console.log(res.data)
       this.setData({

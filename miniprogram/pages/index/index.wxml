@@ -3,10 +3,10 @@
 </view>
 <view class="swperBox">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" style="height:304rpx">
-    <block wx:for="{{banner}}" wx:key="*this">
+    <block wx:for="{{banner}}" wx:key="index">
       <swiper-item>
-        <view class="swiper-item {{item}}">
-          <image src="../../images/{{item}}.png" mode='widthFix' />
+        <view class="swiper-item">
+          <image src="{{item.imagePath}}" mode='widthFix' />
         </view>
       </swiper-item>
     </block>
@@ -47,7 +47,7 @@
 <view class="floor-content">
   <view class="floor seckill">
     <view style="display:flex; padding:20rpx 0;">
-      <text class="seckillTitle">京东秒杀</text>
+      <text class="seckillTitle">快手秒杀</text>
       <van-count-down use-slot time="{{ time }}" bind:change="onChange">
         <text class="item">{{ timeData.hours }}</text>:
         <text class="item">{{ timeData.minutes }}</text>:
@@ -57,48 +57,16 @@
     <view>
       <view class="secondsKill">
         <scroll-view class="scroll-view_H" scroll-x="true" enable-flex="true" bindscroll="scroll" style="width: 100%">
-          <view class="flex-wrp" style="flex-direction:column;">
+          <view class="flex-wrp" style="flex-direction:column;"  wx:for="{{productList}}" wx:key="index">
+          <navigator url="../info/info?_id={{item._id}}">
             <view class="SecondsKillImg">
-              <image src="../../images/iphone.png" />
+              <image src="{{item.fileIds[0]}}" mode='widthFix' />
             </view>
-            <view class="secondesKillPice">￥3000</view>
-            <view class="secondesKillPice">￥3000</view>
+            <view class="secondesKillPice seckill-new-price">￥{{item.productPrice}}</view>
+            <view class="secondesKillPice">￥{{item.productPrice}}</view>
+                </navigator>
           </view>
-          <view class="flex-wrp" style="flex-direction:column;">
-            <view class="SecondsKillImg">
-              <image src="../../images/iphone.png" />
-            </view>
-            <view class="secondesKillPice">￥3000</view>
-            <view class="secondesKillPice">￥3000</view>
-          </view>
-          <view class="flex-wrp" style="flex-direction:column;">
-            <view class="SecondsKillImg">
-              <image src="../../images/iphone.png" />
-            </view>
-            <view class="secondesKillPice">￥3000</view>
-            <view class="secondesKillPice">￥3000</view>
-          </view>
-          <view class="flex-wrp" style="flex-direction:column;">
-            <view class="SecondsKillImg">
-              <image src="../../images/iphone.png" />
-            </view>
-            <view class="secondesKillPice">￥3000</view>
-            <view class="secondesKillPice">￥3000</view>
-          </view>
-          <view class="flex-wrp" style="flex-direction:column;">
-            <view class="SecondsKillImg">
-              <image src="../../images/iphone.png" />
-            </view>
-            <view class="secondesKillPice">￥3000</view>
-            <view class="secondesKillPice">￥3000</view>
-          </view>
-          <view class="flex-wrp" style="flex-direction:column;">
-            <view class="SecondsKillImg">
-              <image src="../../images/iphone.png" />
-            </view>
-            <view class="secondesKillPice">￥3000</view>
-            <view class="secondesKillPice">￥3000</view>
-          </view>
+    
         </scroll-view>
       </view>
 

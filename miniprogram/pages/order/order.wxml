@@ -1,0 +1,79 @@
+<view class="orderAdder">
+<view bindtap="onAdderInfo" class="orderAdderEditor">编辑</view>
+	<view>{{adderInfo.userName}} {{adderInfo.telNumber}}</view>
+	<view class="orderAdderText">{{adderInfo.provinceName}}{{adderInfo.cityName}}{{adderInfo.countyName}}{{adderInfo.detailInfo}}</view>
+</view>
+<view class="orderInfo">
+	<view class="orderInfoItem" wx:for="{{orderInfo}}" wx:key="index">
+		<view class="orderInfoImg">
+			<image mode="widthFix" src="{{item.fileIds}}" />
+		</view>
+		<view class="orderInfoItemContent">
+			<view class="orderInfoItemName">{{item.productName}}</view>
+			<view class="orderInfoFooterItem">
+				<view class="orderInfoPrice">￥{{item.productPrice}}</view>
+				<view class="orderInfoPriceNum">x1</view>
+			</view>
+		</view>
+	</view>
+	<view class="shipping">
+		<view class="shippingTitel">
+			<view>配送服务</view>
+			<view class="shippingType">快递</view>
+		</view>
+		<view class="shippingTitel">
+			<view class="shippingType">大件送货时间</view>
+			<view class="shippingType">04-17 周五</view>
+		</view>
+		<view class="shippingTitel">
+			<view class="shippingType">大件安装时间</view>
+			<view class="shippingType">04-18 周六</view>
+		</view>
+	</view>
+</view>
+<view class="orderInfo">
+	<view class="shipping shippingInfo">
+		<view class="shippingTitel">
+			<view>促销优惠</view>
+			<view class="shippingType shippingStrong">查看更多优惠</view>
+		</view>
+		<view class="shippingTitel">
+			<view class="">发票信息</view>
+			<view class="shippingType">电子发票 个人 商品明细</view>
+		</view>
+		<view class="shippingTitel">
+			<view class="">优惠券</view>
+			<view class="shippingType">无可用</view>
+		</view>
+		<view class="shippingTitel">
+			<view class="">礼品卡</view>
+			<view class="shippingType">无可用</view>
+		</view>
+		<view class="shippingTitel">
+			<view class="">红包</view>
+			<view class="shippingType">无可用</view>
+		</view>
+		<view class="shippingTitel">
+			<view class="">京豆</view>
+			<view class="shippingType">无可用</view>
+		</view>
+	</view>
+</view>
+<view class="orderInfo">
+	<view class="shipping" style="border:0; margin-top:0">
+		<view class="shippingTitel">
+			<view>商品金额</view>
+			<view class="shippingType shippingStrong">¥ 2399.00</view>
+		</view>
+		<view class="shippingTitel">
+			<view class="">运费</view>
+			<view class="shippingType">+ ¥0.00</view>
+		</view>
+		<view class="shippingTitel shippingPrice" style="">
+			<view class="">实付金额： <text class="shippingStrong">¥2399.00</text></view>
+		</view>
+    <view class="orderButton">
+   立即支付
+    </view>
+	</view>
+</view>

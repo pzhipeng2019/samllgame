@@ -1,7 +1,85 @@
 /* pages/user/user.wxss */
+image{
+  width: 100%;
+  height: auto;
+}
 .navigator-hover {
   color:blue;
 }
 .other-navigator-hover {
   color:red;
+}
+.userInfo{
+  display: flex;
+  padding-left: 40rpx;
+}
+.userHeader{
+  display: flex;
+  justify-content: flex-end;
+  position:fixed;
+  top: 20rpx;
+  right: 20rpx;
+}
+.userHeader navigator{
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10rpx;
+}
+.userImage{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin-right: 20rpx;
+  overflow: hidden;
+}
+.userName{
+  color: #ffffff;
+}
+.myHeader{
+      position: relative;
+    overflow: hidden;
+        box-shadow: 0 2px 4px rgba(228,57,60,.4);
+    background: -webkit-gradient(linear,left top,right top,from(#eb3c3c),to(#ff7459));
+    background: -webkit-linear-gradient(left,#eb3c3c,#ff7459);
+    background: -webkit-gradient(linear, left top, right top, from(#eb3c3c), to(#ff7459));
+    background: -webkit-linear-gradient(left, #eb3c3c, #ff7459);
+    background: linear-gradient(90deg,#eb3c3c,#ff7459);
+    box-sizing: border-box;
+    min-height: 110px;
+    padding-top: 25px;
+}
+.myOrderImage{
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-flex;
+  justify-content: center;
+}
+.myOrderText{
+  font-size: 24rpx;
+}
+.myOrderCark{
+  display: flex;
+  background-color: #ffffff;
+  margin: 40rpx 0 0rpx;
+  padding: 20rpx 0;
+}
+.myOrderCarkItem{
+  text-align: center;
+  padding: 0 20rpx;
+  flex: 1
+}
+.myOrderItemText{
+  color: #eb3c3c;
+  font-size: 28rpx;
+  width: 80rpx;
+  height: 50rpx;
+  display: inline-flex;
+  justify-content: center;
+}
+.col-25{
+  width: 25%;
+  padding:10rpx 0;
+  justify-content: center;
+  text-align: center;
 }

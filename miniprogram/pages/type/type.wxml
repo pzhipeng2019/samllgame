@@ -1,0 +1,10 @@
+<view>
+  <view>
+    <text class="typeTitle">分类名称</text>
+    <input class="weui-input" focus type='text' placeholder="{{typeValue}}" bindinput="inputValue" confirm-type="send"/>
+    <button type="primary" bindtap="submitType"> 提交 </button>
+  </view>
+</view>
+<view wx:for="{{typeList}}">
+  {{item.typeName}}
+</view>

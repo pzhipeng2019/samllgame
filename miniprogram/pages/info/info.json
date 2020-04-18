@@ -2,5 +2,5 @@
   "usingComponents": {
  "van-icon": "/@vant/weapp/icon"
   },
-  "backgroundColor": "#ffffff"
+ "navigationBarTitleText": "商品详情"
 }

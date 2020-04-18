@@ -79,8 +79,15 @@ flex-wrap: wrap;
 .seckill{
   background: #ffffff;
 }
+.seckill-new-price{
+  color: #e93b3d;
+  font-size: 28rpx;
+  font-weight: bold;
+}
 .seckillTitle{
-  padding-right: 10rpx;
+  padding-right: 20rpx;
+  padding-left: 20rpx;
+  font-size: 28rpx;
 }
 .item {
   display: inline-block;

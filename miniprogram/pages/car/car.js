@@ -10,7 +10,11 @@ Page({
     AllChecked:false,
     totalPrice:0.00,
     openid:"oGPBK5O_7-nNf1t1g1nGmn1eDsjE",
+    orderArr:[]
   },
+  /**
+   * 选择数量
+   */
   onChange(event) {
     wx.showLoading({
       title: '处理中...',
@@ -67,6 +71,7 @@ Page({
         carList[item].checked = true
       }
     }
+    this.uploadTotalPrice(carList);
     this.setData({
       AllChecked: !AllChecked,
       carList,
@@ -139,10 +144,23 @@ Page({
    * 修改价格
    */
   uploadTotalPrice: function (carList){
-    
-    
+  
     const newCarList = carList.filter(item => item.checked === true);
     console.log(newCarList)
+    let orderArr=[];
+    for(let item in newCarList){
+      orderArr.push(newCarList[item]._id)
+    }
+    console.log(orderArr)
+    if(newCarList.length<carList.length){
+      this.setData({
+        AllChecked:false
+      })
+    }else{
+      this.setData({
+        AllChecked: true
+      })
+    }
     let totalPrice = 0;
     for (let item in newCarList) {
       totalPrice = totalPrice + Number(newCarList[item].productPrice) * newCarList[item].carItemNum
@@ -150,6 +168,7 @@ Page({
     console.log(totalPrice)
     this.setData({
       totalPrice,
+      orderArr,
     })
   },
   /**
@@ -167,6 +186,7 @@ Page({
       const obj = carList.find(item => item._id === id);
       carList.splice(carList.indexOf(obj), 1)
       console.log(carList)
+      this.uploadTotalPrice(carList)
       this.setData({
         carList,
       })
@@ -194,7 +214,28 @@ Page({
     })
     
   },
-
+  goOrder:function(event){
+    const {orderArr}=this.data;
+    console.log(orderArr)
+    wx.navigateTo({
+      url: '../order/order',
+      events: {
+        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+        acceptDataFromOpenedPage: function(data) {
+          console.log(data)
+         
+        },
+        someEvent: function(data) {
+          console.log(data)
+        }
+       
+      },
+      success: function(res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: orderArr })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

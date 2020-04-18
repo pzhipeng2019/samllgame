@@ -1,0 +1,107 @@
+/* pages/order/order.wxss */
+image{
+  width: 100%;
+}
+
+.downline{
+  width: 100%;
+  padding-bottom: 2px;
+  background: #cecece url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAKBAMAAACOO0tGAAAABGdBT…DXLwKT58CuX2cDTIEjdgOcYfJJ2A3Qgsmz4/CBwWgQUiMIAXzCOFELLk/nAAAAAElFTkSuQmCC) top repeat-x;
+  background-size: 64px 5px;
+  margin-top: 10rpx;
+}
+.orderInfoImg{
+  width: 170rpx;
+  height: 170rpx;
+}
+.orderInfo{
+  background: #ffffff;
+  padding: 20rpx 20rpx;
+  margin: 20rpx 0;
+  border-radius: 20rpx;
+}
+.orderInfoItem{
+  display: flex;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #cecece;
+}
+.orderAdder{
+  padding: 20rpx;
+  background: #ffffff;
+}
+.orderAdderText{
+  padding: 10rpx 0;
+  font-size: 28rpx;
+}
+.orderInfoItemContent{
+  flex: 1;
+  padding: 0 20rpx;
+}
+.orderInfoItemName{
+  font-size: 28rpx;
+  font-weight: bold;
+  height: 120rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.orderInfoFooterItem{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.orderInfoPrice{
+  color: #f2270c;
+}
+.orderInfoPriceNum{
+  font-size: 24rpx;
+  color: #cecece;
+}
+.shipping{
+ 
+  margin-top: 40rpx;
+}
+.shippingTitel{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+
+ padding: 10rpx 0;
+}
+.shippingType{
+  font-size: 24rpx;
+  color: #666666;
+}
+.shippingInfo{
+  border: 0;
+  margin: 0;
+}
+.shippingInfo .shippingTitel{
+  border-bottom: 1px solid #cecece;
+  padding: 25rpx 0;
+}
+.shippingInfo .shippingTitel:last-child{
+  border: 0;
+}
+.shippingStrong{
+  color: #f2270c;
+}
+.shippingPrice{
+  justify-content: flex-end;
+}
+.orderButton{
+  color: #fff;
+    background: #3884ff;
+    box-shadow: 0 3px 6px 0 rgba(0,58,152,.2);
+    border: none;
+    text-align: center;
+    padding: 20rpx;
+    border-radius: 40rpx;
+    margin-top: 40rpx;
+}
+.orderAdderEditor{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 24rpx;
+  width: 100%;
+}

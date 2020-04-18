@@ -1,0 +1,42 @@
+<view>
+	<view class="input-group">
+		<view class="input-item">
+			<text class="inputTitle">图片标题</text>
+			<view class="inputBox">
+				<input placeholder="图片标题" value="{{inputTitle}}"  bindinput="inputTitle"/>
+			</view>
+		</view>
+	<view class="input-item">
+			<text class="inputTitle">图片描述</text>
+			<view class="inputBox">
+				<input placeholder="图片描述" value="{{inputDescribe}}"  bindinput="inputDescribe" />
+			</view>
+		</view>
+	<view class="input-item">
+			<text class="inputTitle">跳转链接</text>
+			<view class="inputBox">
+				<input placeholder="跳转链接" value="{{inputUrl}}" bindinput="inputUrl"/>
+			</view>
+		</view>
+	<view class="input-item">
+			<text class="inputTitle">图片类型</text>
+			<view class="inputBox">
+				<picker bindchange="bindPickerChange" value="{{imageType}}" range="{{array}}">
+    <view class="picker">
+     {{array[imageType]}}
+    </view>
+  </picker>
+			</view>
+		</view>
+	<view class="input-item">
+			<text class="inputTitle">图片预览</text>
+			<view class="inputBox" bindtap="uploadImage">上传图片</view>
+		</view>
+	</view>
+  <view>
+    <image mode="widthFix" src="{{imagePath}}"></image>
+  </view>
+</view>
+<view class="footer-btn">
+  <button bindtap="subimtBanner">提交</button>
+</view>

@@ -1,0 +1,31 @@
+/* pages/banner/banner.wxss */
+input{
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+}
+.input-item{
+  display: flex;
+  margin: 20rpx 0;
+  background: #ffffff;
+  padding: 20rpx 0;
+}
+.inputTitle{
+  padding: 0 20rpx;
+}
+.footer-btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1989fa;
+  color: #ffffff;
+  box-shadow: 0 0 10rpx #e6e6e6;
+}
+.inputBox{
+  flex: 1;
+}
+.footer-btn button{
+  color: #ffffff;
+}

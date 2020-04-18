@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-icon": "/@vant/weapp/icon",
+    "van-tag": "/@vant/weapp/tag"
+  },
   "navigationBarTitleText": "我的"
 }

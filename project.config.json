@@ -27,6 +27,7 @@
 	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -103,6 +104,26 @@
 					"name": "pages/car/car",
 					"pathName": "pages/car/car",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "_id= f3db088f5e95823b00aeab257a67d580",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/type/type",
+					"pathName": "pages/type/type",
+					"query": "_id= f3db088f5e95823b00aeab257a67d580",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/banner/banner",
+					"pathName": "pages/banner/banner",
 					"scene": null
 				}
 			]

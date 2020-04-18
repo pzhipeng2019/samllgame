@@ -1,0 +1,10 @@
+/* pages/type/type.wxss */
+input{
+  background: #ffffff;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.typeTitle{
+  font-size: 32rpx;
+  line-height: 80rpx;
+}

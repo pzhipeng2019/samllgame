@@ -8,7 +8,7 @@ Page({
   data: {
     productList:[],//数据列表
     value: '',
-    banner: ['img1', 'img2', 'img3', 'img4','img5'],
+    banner: [],
     indicatorDots: true,
     vertical: false,
     autoplay: true,
@@ -66,12 +66,46 @@ Page({
     })
   },
   /**
+   * 获取banner
+   */
+  getBannerImage:function(){
+    db.collection("bannerImage").where({
+      imageType:"0"
+    }).get().then(res=>{
+      console.log(res.data)
+      this.setData({
+        banner:res.data
+      })
+    }).catch(err=>{
+      console.log(err)
+    })
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this;
     console.log("onLoad")
     this.getProduct();//获取数据
+    this.getBannerImage();//获取banner图片
+    // 可以通过 wx.getSetting 先查询一下用户是否授权了 "scope.record" 这个 scope
+wx.getSetting({
+  success(res) {
+    if (!res.authSetting['scope.record']) {
+      wx.authorize({
+        scope: 'scope.record',
+        success () {
+          // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+          wx.startRecord()
+        }
+      })
+    }
+  }
+})
+   
   },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -86,6 +120,12 @@ Page({
   onShow: function () {
     console.log("onShow")
     this.getProduct();//获取数据
+    this.getBannerImage();//获取banner图片
+    wx.getUserInfo({
+      success: function(res) {
+        console.log(res.userInfo)
+      }
+    })
   },
 
   /**

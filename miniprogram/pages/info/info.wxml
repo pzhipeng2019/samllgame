@@ -27,7 +27,8 @@
   </view>
   <view class="vanButton">
     <view class="buttonCar footButton" bindtap="addCar">加入购物车</view>
-    <view class="buttonBuy footButton">立即购买</view>
+   <view class="buttonBuy footButton" > <navigator url="/pages/order/order?_id={{info._id}}">立即购买</navigator></view>
+    
   </view>
  </view>
 </view>
