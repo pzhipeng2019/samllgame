@@ -1,10 +1,25 @@
-<view>
-  <view>
-    <text class="typeTitle">分类名称</text>
-    <input class="weui-input" focus type='text' placeholder="{{typeValue}}" bindinput="inputValue" confirm-type="send"/>
-    <button type="primary" bindtap="submitType"> 提交 </button>
-  </view>
-</view>
-<view wx:for="{{typeList}}">
-  {{item.typeName}}
+<view style="padding:20rpx">
+	<view>
+		<text class="typeTitle">分类名称</text>
+		<input class="typeInput" focus type='text' placeholder="{{typeValue}}" bindinput="inputValue" confirm-type="send" />
+		<button type="primary" bindtap="submitType"> 提交 </button>
+	</view>
+	<view class="typeList">
+		<van-swipe-cell right-width="{{ 65 }}" wx:for="{{typeList}}" >
+			
+			<van-cell-group  class="typeItem">
+				<van-cell title="单元格" value="内容" >
+   
+			{{item.typeName}}
+
+        </van-cell>
+			</van-cell-group>
+			<view  slot="right" class="typeItemRight">
+        <view class="typeItemupLoad">修改</view>
+        <view class="typeItemDel">删除</view>
+      </view>
+		</van-swipe-cell>
+
+	</view>
+
 </view>
